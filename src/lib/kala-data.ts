@@ -5,7 +5,7 @@ import textiles from "@/assets/handwoven-textiles.jpg";
 import baskets from "@/assets/jute-baskets.jpg";
 import meena from "@/assets/meena-portrait.jpg";
 
-export type Product = { id: string; title: string; category: string; price: string; status: "Published" | "Draft" | "Needs Review"; image: string; imageAlt: string; description?: string; tags?: string[] };
+export type Product = { id: string; title: string; category: string; price: string; status: "Published" | "Draft" | "Needs Review"; image: string; imageAlt: string; description?: string; tags?: string[]; priceValue?: number; state?: string; craftType?: string; artisan?: string; artisanId?: string; gi?: boolean };
 export type Opportunity = { id: string; title: string; buyer: string; score: number; quantity: string; budget: string; location: string; deadline: string; requirement: string; category: string; materials: string; reasons: string[] };
 export type Enquiry = { id: string; status: "New" | "Accepted" | "In Discussion" | "Completed"; buyer: string; interest: string; quantity: string; budget: string; deadline: string; delivery: string };
 
