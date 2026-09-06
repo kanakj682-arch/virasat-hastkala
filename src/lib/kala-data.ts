@@ -1,6 +1,8 @@
 import silkSaree from "@/assets/silk-saree.jpg";
 import woodenToy from "@/assets/wooden-toy.jpg";
 import brassIdol from "@/assets/brass-idol.jpg";
+import pottery from "@/assets/blue-pottery-vase.jpg";
+
 import textiles from "@/assets/handwoven-textiles.jpg";
 import baskets from "@/assets/jute-baskets.jpg";
 import meena from "@/assets/meena-portrait.jpg";
