@@ -2,4 +2,4 @@
 - [x] Add landing, artisan onboarding, dashboard, catalogue, opportunities, enquiries, products, and profile flows
 - [x] Add buyer requirement, matching, artisan profile, and buyer account flows
 - [x] Fix typecheck build errors (dashboard narrowing, opportunity fallback, missing /buyer and /artisan routes)
-- [ ] Validate routes, responsive layout, and build diagnostics
+- [x] Validate routes, responsive layout, and build diagnostics
