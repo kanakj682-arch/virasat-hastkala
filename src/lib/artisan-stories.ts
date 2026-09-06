@@ -109,3 +109,16 @@ export const artisanStories: ArtisanStory[] = [
 export function findStory(id: string) {
   return artisanStories.find((story) => story.id === id);
 }
+
+const productStoryMap: Record<string, string> = {
+  "silk-saree": "sunita",
+  "wooden-toy": "kishore",
+  "brass-idol": "ramesh",
+  "blue-pottery": "meena",
+  "jute-baskets": "arjun",
+  "handwoven-textiles": "lata",
+};
+
+export function storyIdForProduct(productId: string) {
+  return productStoryMap[productId];
+}
