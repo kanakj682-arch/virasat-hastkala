@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { artisans } from "@/lib/kala-data";
 import { AppShell, Button, Score, SectionHeading } from "@/components/kala/ui";
+import { ArtisanStoryBadge } from "@/components/kala/artisan-stories";
 
 export const Route = createFileRoute("/buyer/matches")({
   head: () => ({
@@ -39,6 +40,7 @@ function BuyerMatches() {
                 </div>
                 <p className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground"><MapPin className="size-4" />{artisan.location}</p>
                 <p className="mt-3 text-sm text-muted-foreground">{artisan.reason}</p>
+                <div className="mt-3"><ArtisanStoryBadge artisanId={artisan.id} artisanName={artisan.name} /></div>
                 <Link to="/artisan/$id" params={{ id: artisan.id }} className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted">View profile <ArrowRight className="size-4" /></Link>
               </div>
             </article>
