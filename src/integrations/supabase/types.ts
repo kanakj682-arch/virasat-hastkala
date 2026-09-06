@@ -14,7 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      buyer_enquiries: {
+        Row: {
+          company_name: string
+          contact_person: string
+          created_at: string
+          email: string
+          estimated_quantity: string
+          id: string
+          notes: string | null
+          phone: string
+          requirement_type: string
+        }
+        Insert: {
+          company_name: string
+          contact_person: string
+          created_at?: string
+          email: string
+          estimated_quantity: string
+          id?: string
+          notes?: string | null
+          phone: string
+          requirement_type: string
+        }
+        Update: {
+          company_name?: string
+          contact_person?: string
+          created_at?: string
+          email?: string
+          estimated_quantity?: string
+          id?: string
+          notes?: string | null
+          phone?: string
+          requirement_type?: string
+        }
+        Relationships: []
+      }
+      karigar_kyc: {
+        Row: {
+          aadhaar_number: string
+          address: string | null
+          craft_type: string
+          created_at: string
+          full_name: string
+          id: string
+          phone: string
+          photo_path: string | null
+          photo_url: string | null
+        }
+        Insert: {
+          aadhaar_number: string
+          address?: string | null
+          craft_type: string
+          created_at?: string
+          full_name: string
+          id?: string
+          phone: string
+          photo_path?: string | null
+          photo_url?: string | null
+        }
+        Update: {
+          aadhaar_number?: string
+          address?: string | null
+          craft_type?: string
+          created_at?: string
+          full_name?: string
+          id?: string
+          phone?: string
+          photo_path?: string | null
+          photo_url?: string | null
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          category: string | null
+          craft: string | null
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          material: string | null
+          price: string | null
+          tags: string[]
+          title: string
+          transcript: string | null
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          craft?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          material?: string | null
+          price?: string | null
+          tags?: string[]
+          title: string
+          transcript?: string | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          craft?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          material?: string | null
+          price?: string | null
+          tags?: string[]
+          title?: string
+          transcript?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
