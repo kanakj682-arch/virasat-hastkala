@@ -156,7 +156,7 @@ export function ArtisanStoriesButton({ compact = false }: { compact?: boolean })
   );
 }
 
-export function ArtisanStoryBadge({ artisanId, artisanName, className }: { artisanId?: string; artisanName?: string; className?: string }) {
+export function ArtisanStoryBadge({ artisanId, artisanName, className }: { artisanId?: string | undefined; artisanName?: string | undefined; className?: string | undefined }) {
   const [open, setOpen] = useState(false);
   const matched = (artisanId && findStory(artisanId)) || undefined;
   const stories = matched ? [matched, ...artisanStories.filter((story) => story.id !== matched.id)] : artisanStories;
