@@ -59,29 +59,45 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-surface-warm: var(--surface-warm);
+  --color-saffron: var(--saffron);
+  --color-saffron-foreground: var(--saffron-foreground);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-indigo: var(--indigo);
+  --color-indigo-soft: var(--indigo-soft);
+  --color-moss: var(--moss);
+  --color-moss-soft: var(--moss-soft);
+  --color-sky-soft: var(--sky-soft);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.875rem;
+  --background: oklch(0.975 0.018 86);
+  --foreground: oklch(0.205 0.026 264);
+  --card: oklch(0.995 0.008 90);
+  --card-foreground: oklch(0.205 0.026 264);
+  --popover: oklch(0.995 0.008 90);
+  --popover-foreground: oklch(0.205 0.026 264);
+  --primary: oklch(0.31 0.087 264);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --secondary: oklch(0.93 0.026 86);
+  --secondary-foreground: oklch(0.31 0.087 264);
+  --muted: oklch(0.93 0.026 86);
+  --muted-foreground: oklch(0.49 0.035 264);
+  --accent: oklch(0.93 0.026 86);
+  --accent-foreground: oklch(0.31 0.087 264);
+  --destructive: oklch(0.59 0.19 28);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.87 0.035 82);
+  --input: oklch(0.87 0.035 82);
+  --ring: oklch(0.68 0.11 62);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -95,6 +111,19 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --ink: oklch(0.205 0.026 264);
+  --ink-soft: oklch(0.29 0.06 264);
+  --paper: oklch(0.975 0.018 86);
+  --surface-warm: oklch(0.95 0.035 80);
+  --saffron: oklch(0.77 0.16 70);
+  --saffron-foreground: oklch(0.23 0.05 50);
+  --terracotta: oklch(0.59 0.16 42);
+  --terracotta-soft: oklch(0.91 0.075 55);
+  --indigo: oklch(0.31 0.087 264);
+  --indigo-soft: oklch(0.89 0.045 265);
+  --moss: oklch(0.54 0.09 142);
+  --moss-soft: oklch(0.88 0.06 142);
+  --sky-soft: oklch(0.9 0.06 225);
 }
 
 .dark {
@@ -140,5 +169,21 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    letter-spacing: 0;
   }
+
+  button, a, input, textarea, select { letter-spacing: 0; }
+  ::selection { background: var(--color-saffron); color: var(--color-saffron-foreground); }
+}
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+@keyframes progress-in { from { width: 0; } }
+.animate-rise-in { animation: rise-in .55s cubic-bezier(.2,.75,.25,1) both; }
+.animate-pulse-soft { animation: pulse-soft 1.8s ease-in-out infinite; }
+.animate-progress-in { animation: progress-in .9s cubic-bezier(.2,.75,.25,1) both; }
+.craft-grid {
+  background-image: linear-gradient(to right, color-mix(in oklab, var(--color-indigo) 6%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, var(--color-indigo) 6%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
