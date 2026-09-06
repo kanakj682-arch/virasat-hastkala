@@ -10,33 +10,253 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AddProductRouteImport } from './routes/add-product'
+import { Route as BuyerRouteImport } from './routes/buyer'
+import { Route as CatalogueRouteImport } from './routes/catalogue'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as EnquiriesRouteImport } from './routes/enquiries'
+import { Route as KalRouteImport } from './routes/kal'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as OpportunitiesRouteImport } from './routes/opportunities'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as PublishSuccessRouteImport } from './routes/publish-success'
+import { Route as ArtisanIdRouteImport } from './routes/artisan.$id'
+import { Route as BuyerEnquiriesRouteImport } from './routes/buyer.enquiries'
+import { Route as BuyerMatchesRouteImport } from './routes/buyer.matches'
+import { Route as BuyerProfileRouteImport } from './routes/buyer.profile'
+import { Route as BuyerRequirementsRouteImport } from './routes/buyer.requirements'
+import { Route as OpportunitiesIdRouteImport } from './routes/opportunities.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AddProductRoute = AddProductRouteImport.update({
+  id: '/add-product',
+  path: '/add-product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyerRoute = BuyerRouteImport.update({
+  id: '/buyer',
+  path: '/buyer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogueRoute = CatalogueRouteImport.update({
+  id: '/catalogue',
+  path: '/catalogue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnquiriesRoute = EnquiriesRouteImport.update({
+  id: '/enquiries',
+  path: '/enquiries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KalRoute = KalRouteImport.update({
+  id: '/kal',
+  path: '/kal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesRoute = OpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublishSuccessRoute = PublishSuccessRouteImport.update({
+  id: '/publish-success',
+  path: '/publish-success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtisanIdRoute = ArtisanIdRouteImport.update({
+  id: '/artisan/$id',
+  path: '/artisan/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyerEnquiriesRoute = BuyerEnquiriesRouteImport.update({
+  id: '/enquiries',
+  path: '/enquiries',
+  getParentRoute: () => BuyerRoute,
+} as any)
+const BuyerMatchesRoute = BuyerMatchesRouteImport.update({
+  id: '/matches',
+  path: '/matches',
+  getParentRoute: () => BuyerRoute,
+} as any)
+const BuyerProfileRoute = BuyerProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => BuyerRoute,
+} as any)
+const BuyerRequirementsRoute = BuyerRequirementsRouteImport.update({
+  id: '/requirements',
+  path: '/requirements',
+  getParentRoute: () => BuyerRoute,
+} as any)
+const OpportunitiesIdRoute = OpportunitiesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => OpportunitiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/add-product': typeof AddProductRoute
+  '/buyer': typeof BuyerRouteWithChildren
+  '/catalogue': typeof CatalogueRoute
+  '/dashboard': typeof DashboardRoute
+  '/enquiries': typeof EnquiriesRoute
+  '/kal': typeof KalRoute
+  '/onboarding': typeof OnboardingRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
+  '/products': typeof ProductsRoute
+  '/profile': typeof ProfileRoute
+  '/publish-success': typeof PublishSuccessRoute
+  '/artisan/$id': typeof ArtisanIdRoute
+  '/buyer/enquiries': typeof BuyerEnquiriesRoute
+  '/buyer/matches': typeof BuyerMatchesRoute
+  '/buyer/profile': typeof BuyerProfileRoute
+  '/buyer/requirements': typeof BuyerRequirementsRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/add-product': typeof AddProductRoute
+  '/buyer': typeof BuyerRouteWithChildren
+  '/catalogue': typeof CatalogueRoute
+  '/dashboard': typeof DashboardRoute
+  '/enquiries': typeof EnquiriesRoute
+  '/kal': typeof KalRoute
+  '/onboarding': typeof OnboardingRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
+  '/products': typeof ProductsRoute
+  '/profile': typeof ProfileRoute
+  '/publish-success': typeof PublishSuccessRoute
+  '/artisan/$id': typeof ArtisanIdRoute
+  '/buyer/enquiries': typeof BuyerEnquiriesRoute
+  '/buyer/matches': typeof BuyerMatchesRoute
+  '/buyer/profile': typeof BuyerProfileRoute
+  '/buyer/requirements': typeof BuyerRequirementsRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/add-product': typeof AddProductRoute
+  '/buyer': typeof BuyerRouteWithChildren
+  '/catalogue': typeof CatalogueRoute
+  '/dashboard': typeof DashboardRoute
+  '/enquiries': typeof EnquiriesRoute
+  '/kal': typeof KalRoute
+  '/onboarding': typeof OnboardingRoute
+  '/opportunities': typeof OpportunitiesRouteWithChildren
+  '/products': typeof ProductsRoute
+  '/profile': typeof ProfileRoute
+  '/publish-success': typeof PublishSuccessRoute
+  '/artisan/$id': typeof ArtisanIdRoute
+  '/buyer/enquiries': typeof BuyerEnquiriesRoute
+  '/buyer/matches': typeof BuyerMatchesRoute
+  '/buyer/profile': typeof BuyerProfileRoute
+  '/buyer/requirements': typeof BuyerRequirementsRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/add-product'
+    | '/buyer'
+    | '/catalogue'
+    | '/dashboard'
+    | '/enquiries'
+    | '/kal'
+    | '/onboarding'
+    | '/opportunities'
+    | '/products'
+    | '/profile'
+    | '/publish-success'
+    | '/artisan/$id'
+    | '/buyer/enquiries'
+    | '/buyer/matches'
+    | '/buyer/profile'
+    | '/buyer/requirements'
+    | '/opportunities/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/add-product'
+    | '/buyer'
+    | '/catalogue'
+    | '/dashboard'
+    | '/enquiries'
+    | '/kal'
+    | '/onboarding'
+    | '/opportunities'
+    | '/products'
+    | '/profile'
+    | '/publish-success'
+    | '/artisan/$id'
+    | '/buyer/enquiries'
+    | '/buyer/matches'
+    | '/buyer/profile'
+    | '/buyer/requirements'
+    | '/opportunities/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/add-product'
+    | '/buyer'
+    | '/catalogue'
+    | '/dashboard'
+    | '/enquiries'
+    | '/kal'
+    | '/onboarding'
+    | '/opportunities'
+    | '/products'
+    | '/profile'
+    | '/publish-success'
+    | '/artisan/$id'
+    | '/buyer/enquiries'
+    | '/buyer/matches'
+    | '/buyer/profile'
+    | '/buyer/requirements'
+    | '/opportunities/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AddProductRoute: typeof AddProductRoute
+  BuyerRoute: typeof BuyerRouteWithChildren
+  CatalogueRoute: typeof CatalogueRoute
+  DashboardRoute: typeof DashboardRoute
+  EnquiriesRoute: typeof EnquiriesRoute
+  KalRoute: typeof KalRoute
+  OnboardingRoute: typeof OnboardingRoute
+  OpportunitiesRoute: typeof OpportunitiesRouteWithChildren
+  ProductsRoute: typeof ProductsRoute
+  ProfileRoute: typeof ProfileRoute
+  PublishSuccessRoute: typeof PublishSuccessRoute
+  ArtisanIdRoute: typeof ArtisanIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +268,170 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/add-product': {
+      id: '/add-product'
+      path: '/add-product'
+      fullPath: '/add-product'
+      preLoaderRoute: typeof AddProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buyer': {
+      id: '/buyer'
+      path: '/buyer'
+      fullPath: '/buyer'
+      preLoaderRoute: typeof BuyerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogue': {
+      id: '/catalogue'
+      path: '/catalogue'
+      fullPath: '/catalogue'
+      preLoaderRoute: typeof CatalogueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enquiries': {
+      id: '/enquiries'
+      path: '/enquiries'
+      fullPath: '/enquiries'
+      preLoaderRoute: typeof EnquiriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kal': {
+      id: '/kal'
+      path: '/kal'
+      fullPath: '/kal'
+      preLoaderRoute: typeof KalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities': {
+      id: '/opportunities'
+      path: '/opportunities'
+      fullPath: '/opportunities'
+      preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publish-success': {
+      id: '/publish-success'
+      path: '/publish-success'
+      fullPath: '/publish-success'
+      preLoaderRoute: typeof PublishSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artisan/$id': {
+      id: '/artisan/$id'
+      path: '/artisan/$id'
+      fullPath: '/artisan/$id'
+      preLoaderRoute: typeof ArtisanIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buyer/enquiries': {
+      id: '/buyer/enquiries'
+      path: '/enquiries'
+      fullPath: '/buyer/enquiries'
+      preLoaderRoute: typeof BuyerEnquiriesRouteImport
+      parentRoute: typeof BuyerRoute
+    }
+    '/buyer/matches': {
+      id: '/buyer/matches'
+      path: '/matches'
+      fullPath: '/buyer/matches'
+      preLoaderRoute: typeof BuyerMatchesRouteImport
+      parentRoute: typeof BuyerRoute
+    }
+    '/buyer/profile': {
+      id: '/buyer/profile'
+      path: '/profile'
+      fullPath: '/buyer/profile'
+      preLoaderRoute: typeof BuyerProfileRouteImport
+      parentRoute: typeof BuyerRoute
+    }
+    '/buyer/requirements': {
+      id: '/buyer/requirements'
+      path: '/requirements'
+      fullPath: '/buyer/requirements'
+      preLoaderRoute: typeof BuyerRequirementsRouteImport
+      parentRoute: typeof BuyerRoute
+    }
+    '/opportunities/$id': {
+      id: '/opportunities/$id'
+      path: '/$id'
+      fullPath: '/opportunities/$id'
+      preLoaderRoute: typeof OpportunitiesIdRouteImport
+      parentRoute: typeof OpportunitiesRoute
+    }
   }
 }
 
+interface BuyerRouteChildren {
+  BuyerEnquiriesRoute: typeof BuyerEnquiriesRoute
+  BuyerMatchesRoute: typeof BuyerMatchesRoute
+  BuyerProfileRoute: typeof BuyerProfileRoute
+  BuyerRequirementsRoute: typeof BuyerRequirementsRoute
+}
+
+const BuyerRouteChildren: BuyerRouteChildren = {
+  BuyerEnquiriesRoute: BuyerEnquiriesRoute,
+  BuyerMatchesRoute: BuyerMatchesRoute,
+  BuyerProfileRoute: BuyerProfileRoute,
+  BuyerRequirementsRoute: BuyerRequirementsRoute,
+}
+
+const BuyerRouteWithChildren = BuyerRoute._addFileChildren(BuyerRouteChildren)
+
+interface OpportunitiesRouteChildren {
+  OpportunitiesIdRoute: typeof OpportunitiesIdRoute
+}
+
+const OpportunitiesRouteChildren: OpportunitiesRouteChildren = {
+  OpportunitiesIdRoute: OpportunitiesIdRoute,
+}
+
+const OpportunitiesRouteWithChildren = OpportunitiesRoute._addFileChildren(
+  OpportunitiesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AddProductRoute: AddProductRoute,
+  BuyerRoute: BuyerRouteWithChildren,
+  CatalogueRoute: CatalogueRoute,
+  DashboardRoute: DashboardRoute,
+  EnquiriesRoute: EnquiriesRoute,
+  KalRoute: KalRoute,
+  OnboardingRoute: OnboardingRoute,
+  OpportunitiesRoute: OpportunitiesRouteWithChildren,
+  ProductsRoute: ProductsRoute,
+  ProfileRoute: ProfileRoute,
+  PublishSuccessRoute: PublishSuccessRoute,
+  ArtisanIdRoute: ArtisanIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
