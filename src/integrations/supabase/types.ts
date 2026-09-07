@@ -58,7 +58,9 @@ export type Database = {
           created_at: string
           full_name: string
           id: string
+          language: string | null
           phone: string
+          phone_verified: boolean
           photo_path: string | null
           photo_url: string | null
         }
@@ -69,7 +71,9 @@ export type Database = {
           created_at?: string
           full_name: string
           id?: string
+          language?: string | null
           phone: string
+          phone_verified?: boolean
           photo_path?: string | null
           photo_url?: string | null
         }
@@ -80,7 +84,9 @@ export type Database = {
           created_at?: string
           full_name?: string
           id?: string
+          language?: string | null
           phone?: string
+          phone_verified?: boolean
           photo_path?: string | null
           photo_url?: string | null
         }
