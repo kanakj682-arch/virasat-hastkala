@@ -16,6 +16,7 @@ import { Route as CatalogueRouteImport } from './routes/catalogue'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EnquiriesRouteImport } from './routes/enquiries'
 import { Route as KalRouteImport } from './routes/kal'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -61,6 +62,11 @@ const EnquiriesRoute = EnquiriesRouteImport.update({
 const KalRoute = KalRouteImport.update({
   id: '/kal',
   path: '/kal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -127,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/enquiries': typeof EnquiriesRoute
   '/kal': typeof KalRoute
+  '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/products': typeof ProductsRoute
@@ -147,6 +154,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/enquiries': typeof EnquiriesRoute
   '/kal': typeof KalRoute
+  '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/products': typeof ProductsRoute
@@ -168,6 +176,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/enquiries': typeof EnquiriesRoute
   '/kal': typeof KalRoute
+  '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/opportunities': typeof OpportunitiesRouteWithChildren
   '/products': typeof ProductsRoute
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/enquiries'
     | '/kal'
+    | '/login'
     | '/onboarding'
     | '/opportunities'
     | '/products'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/enquiries'
     | '/kal'
+    | '/login'
     | '/onboarding'
     | '/opportunities'
     | '/products'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/enquiries'
     | '/kal'
+    | '/login'
     | '/onboarding'
     | '/opportunities'
     | '/products'
@@ -251,6 +263,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   EnquiriesRoute: typeof EnquiriesRoute
   KalRoute: typeof KalRoute
+  LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   OpportunitiesRoute: typeof OpportunitiesRouteWithChildren
   ProductsRoute: typeof ProductsRoute
@@ -308,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/kal'
       fullPath: '/kal'
       preLoaderRoute: typeof KalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -426,6 +446,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   EnquiriesRoute: EnquiriesRoute,
   KalRoute: KalRoute,
+  LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   OpportunitiesRoute: OpportunitiesRouteWithChildren,
   ProductsRoute: ProductsRoute,
