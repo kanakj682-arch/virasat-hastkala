@@ -151,3 +151,13 @@ function TabButton({ active, onClick, icon: Icon, label }: { active: boolean; on
     </button>
   );
 }
+
+function Info({ icon: Icon, label, value }: { icon: typeof Package; label: string; value: string }) {
+  return (
+    <div className="rounded-xl bg-muted/60 p-4">
+      <Icon className="size-4 text-terracotta" />
+      <p className="mt-3 text-xs text-muted-foreground">{label}</p>
+      <p className="mt-1 text-sm font-semibold text-ink">{value}</p>
+    </div>
+  );
+}
